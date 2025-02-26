@@ -5,7 +5,8 @@ function searchFunction() {
 
     let resultDiv = document.getElementById("search-results");
     if (searchQuery && homepageContent.includes(searchQuery)) {
-        resultDiv.innerHTML = `<p>Result found: "${searchQuery}" exists on the page.</p>`;
+        // Escape template literals to prevent Jekyll conflict
+        resultDiv.innerHTML = "<p>Result found: \"" + searchQuery + "\" exists on the page.</p>";
     } else {
         resultDiv.innerHTML = "<p>No results found.</p>";
     }
